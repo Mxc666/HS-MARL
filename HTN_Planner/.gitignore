@@ -1,0 +1,10 @@
+**/__pycache__/
+**/*.pyc
+build
+profile*.stat
+*.plan
+*.dot
+*.bench
+*.dat
+.vscode/
+*.pdf

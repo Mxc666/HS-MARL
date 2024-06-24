@@ -1,0 +1,3 @@
+[console_scripts]
+pygrun = antlr4._pygrun:main
+

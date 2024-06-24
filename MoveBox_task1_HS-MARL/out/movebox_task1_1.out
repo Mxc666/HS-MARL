@@ -1,0 +1,20 @@
+2022-07-19 00:49:58 - WARNING  - __main__ - latest
+2022-07-19 00:49:58 - WARNING  - __main__ - parsing duration: 0.128
+2022-07-19 00:49:58 - WARNING  - __main__ - grounding duration: 0.030
+2022-07-19 00:49:58 - WARNING  - __main__ - solving duration: 0.013
+ANTLR runtime and generated code versions disagree: 4.7!=4.8
+ANTLR runtime and generated code versions disagree: 4.7!=4.8
+ANTLR runtime and generated code versions disagree: 4.7!=4.8
+ANTLR runtime and generated code versions disagree: 4.7!=4.8
+improved heuristic
+action_reward {'0': 25, '1': 0, '2': 0}
+sorted_action_reward [('0', 25), ('1', 0), ('2', 0)]
+==>
+1 (act0 r1 r2 b1)
+root 3
+3 (task7 r1 r2 b1) -> m11-task7 4
+4 (task6 r1 r2 b1) -> m8-task6 5
+5 (task3 r1 r2 b1) -> m3-task3 6
+6 (task0 r1 r2 b1) -> m0-task0 1
+<==
+

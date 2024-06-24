@@ -1,0 +1,17 @@
+2024-06-18 18:33:51 - WARNING  - __main__ - latest
+line 21:6 no viable alternative at input '(('
+2024-06-18 18:33:51 - WARNING  - __main__ - parsing duration: 0.080
+2024-06-18 18:33:51 - WARNING  - __main__ - grounding duration: 0.012
+2024-06-18 18:33:51 - WARNING  - __main__ - solving duration: 0.002
+ANTLR runtime and generated code versions disagree: 4.7!=4.8
+ANTLR runtime and generated code versions disagree: 4.7!=4.8
+ANTLR runtime and generated code versions disagree: 4.7!=4.8
+ANTLR runtime and generated code versions disagree: 4.7!=4.8
+improved heuristic
+action_reward {'0': 0, '1': 0, '2': 0}
+sorted_action_reward [('0', 0), ('1', 0), ('2', 0)]
+==>
+root 2
+2 (ArriveGoal r1 r2) -> path1-ArriveGoal 
+<==
+

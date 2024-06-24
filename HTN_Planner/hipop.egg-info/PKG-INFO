@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: hipop
+Version: 9.0
+Summary: Hierarchical Partial-Order Planner
+Author: Charles Lesire, Alexandre Albore
+Author-email: charles.lesire@onera.fr, alexandre.albore@onera.fr

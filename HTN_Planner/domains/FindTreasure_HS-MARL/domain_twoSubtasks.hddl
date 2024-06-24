@@ -1,0 +1,228 @@
+(define (domain FindTreasure)
+(:requirements :typing :method-preconditions :hierarchy)
+
+(:types
+	robot lever - object
+)
+
+(:predicates
+	(AtInitialPos ?r - robot)
+	(AtChannel ?r - robot)
+	(AtLever ?l - lever ?r - robot)
+	(AtUpRoom ?r - robot)
+	(AtTreasurePos ?r - robot)
+)
+
+(:task task0 :parameters (?r1 - robot ?r2 - robot ?l1 - lever))
+(:task task1 :parameters (?r1 - robot ?r2 - robot ?l1 - lever))
+(:task task2 :parameters (?r1 - robot ?r2 - robot ?l1 - lever))
+(:task task3 :parameters (?r1 - robot ?r2 - robot ?l1 - lever))
+(:task task4 :parameters (?r1 - robot ?r2 - robot ?l1 - lever))
+(:task task5 :parameters (?r1 - robot ?r2 - robot ?l1 - lever))
+(:task task6 :parameters (?r1 - robot ?r2 - robot ?l1 - lever))
+(:task task7 :parameters (?r1 - robot ?r2 - robot ?l1 - lever))
+(:task task8 :parameters (?r1 - robot ?r2 - robot ?l1 - lever)))
+
+
+(:method m13-task8
+	:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+	:task (task8 ?r1 ?r2 ?l1)
+	:subtasks (
+	            (task7 ?r1 ?r2 ?l1)
+	            (act11 ?r1 ?r2)
+	            )
+)
+
+(:method m12-task8
+	:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+	:task (task8 ?r1 ?r2 ?l1)
+	:subtasks (
+	            (task6 ?r1 ?r2 ?l1)
+	            (act10 ?r1 ?r2)
+	            )
+)
+
+(:method m11-task7
+	:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+	:task (task7 ?r1 ?r2 ?l1)
+	:subtasks (
+	            (task5 ?r1 ?r2 ?l1)
+	            (act9 ?r1 ?r2 ?l1)
+	            )
+)
+
+(:method m10-task6
+	:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+	:task (task6 ?r1 ?r2 ?l1)
+	:subtasks (
+	            (task4 ?r1 ?r2 ?l1)
+	            (act8 ?r1 ?r2 ?l1)
+	            )
+)
+
+(:method m9-task5
+	:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+	:task (task5 ?r1 ?r2 ?l1)
+	:subtasks (
+	            (task3 ?r1 ?r2 ?l1)
+	            (act7 ?r1 ?r2 ?l1)
+	            )
+)
+
+(:method m8-task5
+	:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+	:task (task5 ?r1 ?r2 ?l1)
+	:subtasks (
+	            (task2 ?r1 ?r2 ?l1)
+	            (act6 ?r1 ?r2 ?l1)
+	            )
+)
+
+(:method m7-task4
+	:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+	:task (task4 ?r1 ?r2 ?l1)
+	:subtasks (
+	            (task1 ?r1 ?r2 ?l1)
+	            (act5 ?r1 ?r2 ?l1)
+	            )
+)
+
+(:method m6-task4
+	:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+	:task (task4 ?r1 ?r2 ?l1)
+	:subtasks (
+	            (task0 ?r1 ?r2 ?l1)
+	            (act4 ?r1 ?r2 ?l1)
+	            )
+)
+
+(:method m5-task3
+	:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+	:task (task3 ?r1 ?r2 ?l1)
+	:subtasks (
+	            (act3 ?r1 ?r2 ?l1)
+	            )
+)
+
+(:method m4-task2
+	:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+	:task (task2 ?r1 ?r2 ?l1)
+	:subtasks (
+	            (act2 ?r1 ?r2 ?l1)
+	            )
+)
+
+(:method m3-task1
+	:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+	:task (task1 ?r1 ?r2 ?l1)
+	:subtasks (and
+		(act1 ?r1 ?r2 ?l1)
+	)
+)
+
+(:method m2-task0
+	:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+	:task (task0 ?r1 ?r2 ?l1)
+	:subtasks (and
+		(act0 ?r1 ?r2 ?l1)
+	)
+)
+
+(:action act11
+:parameters (?r1 - robot ?r2 - robot)
+:precondition (and (AtUpRoom ?r2) (not (AtInitialPos ?r1))
+		)
+:effect (and (AtTreasurePos ?r2) (not (AtInitialPos ?r1))
+		)
+)
+
+(:action act10
+:parameters (?r1 - robot ?r2 - robot)
+:precondition (and (AtUpRoom ?r1) (not (AtInitialPos ?r2))
+		)
+:effect (and (AtTreasurePos ?r1) (not (AtInitialPos ?r2))
+		)
+)
+
+(:action act9
+:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+:precondition (and (AtLever ?l1 ?r1) (not (AtInitialPos ?r1)) (AtChannel ?r2)
+		)
+:effect (and (AtUpRoom ?r2) (not (AtInitialPos ?r1))
+		)
+)
+
+(:action act8
+:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+:precondition (and (AtChannel ?r1) (AtLever ?l1 ?r2) (not (AtInitialPos ?r2))
+		)
+:effect (and (AtUpRoom ?r1) (not (AtInitialPos ?r2))
+		)
+)
+
+(:action act7
+:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+:precondition (and (AtLever ?l1 ?r1) (not (AtInitialPos ?r1)) (AtChannel ?r2)
+		)
+:effect (and (AtLever ?l1 ?r1) (not (AtInitialPos ?r1)) (AtChannel ?r2)
+		)
+)
+
+(:action act6
+:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+:precondition (and (AtLever ?l1 ?r1) (not (AtInitialPos ?r2))
+		)
+:effect (and (AtLever ?l1 ?r1) (not (AtInitialPos ?r1)) (AtChannel ?r2)
+		)
+)
+
+(:action act5
+:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+:precondition (and (AtChannel ?r1) (AtLever ?l1 ?r2) (not (AtInitialPos ?r2))
+		)
+:effect (and (AtChannel ?r1) (AtLever ?l1 ?r2) (not (AtInitialPos ?r2))
+		)
+)
+
+(:action act4
+:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+:precondition (and (AtLever ?l1 ?r2) (not (AtInitialPos ?r1))
+		)
+:effect (and (AtChannel ?r1) (AtLever ?l1 ?r2) (not (AtInitialPos ?r2))
+		)
+)
+
+(:action act3
+:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+:precondition (and (AtInitialPos ?r1) (AtInitialPos ?r2)
+		)
+:effect (and (AtLever ?l1 ?r1) (not (AtInitialPos ?r1)) (AtChannel ?r2)
+		)
+)
+
+(:action act2
+:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+:precondition (and (AtInitialPos ?r1) (AtInitialPos ?r2)
+		)
+:effect (and (AtLever ?l1 ?r1) (not (AtInitialPos ?r2))
+		)
+)
+
+(:action act1
+:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+:precondition (and (AtInitialPos ?r1) (AtInitialPos ?r2)
+		)
+:effect (and (AtChannel ?r1) (AtLever ?l1 ?r2) (not (AtInitialPos ?r2))
+		)
+)
+
+(:action act0
+:parameters (?r1 - robot ?r2 - robot ?l1 - lever)
+:precondition (and (AtInitialPos ?r1) (AtInitialPos ?r2)
+		)
+:effect (and (AtLever ?l1 ?r2) (not (AtInitialPos ?r1))
+		)
+)
+
+
+)

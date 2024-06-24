@@ -1,0 +1,36 @@
+(define (problem roverprob1234) (:domain Rover)
+(:objects
+	rover0 - rover
+	waypoint0 waypoint1 waypoint2 waypoint3 - waypoint
+	)
+ (:htn
+  :tasks (and
+   (get_soil_data waypoint2)
+   (get_rock_data waypoint3)
+   (get_image_data objective1 high_res)
+   )
+  :ordering ( )
+  :constraints ( ))
+(:init
+	(visible waypoint1 waypoint0)
+	(visible waypoint0 waypoint1)
+	(visible waypoint2 waypoint0)
+	(visible waypoint0 waypoint2)
+	(visible waypoint2 waypoint1)
+	(visible waypoint1 waypoint2)
+	(visible waypoint3 waypoint0)
+	(visible waypoint0 waypoint3)
+	(visible waypoint3 waypoint1)
+	(visible waypoint1 waypoint3)
+	(visible waypoint3 waypoint2)
+	(visible waypoint2 waypoint3)
+	(at rover0 waypoint3)
+	(available rover0)
+	(can_traverse rover0 waypoint3 waypoint0)
+	(can_traverse rover0 waypoint0 waypoint3)
+	(can_traverse rover0 waypoint3 waypoint1)
+	(can_traverse rover0 waypoint1 waypoint3)
+	(can_traverse rover0 waypoint1 waypoint2)
+	(can_traverse rover0 waypoint2 waypoint1)
+)
+)

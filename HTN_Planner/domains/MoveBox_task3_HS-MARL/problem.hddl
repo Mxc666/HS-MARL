@@ -1,0 +1,19 @@
+(define (problem problem1) (:domain moveBox)
+(:objects
+	b1 - box
+	r1 - robot
+	r2 - robot
+	k1 - key
+)
+
+(:htn
+  :tasks (and
+   (AtGoalState r1 r2 b1)
+   )
+  :ordering ( )
+  :constraints ( ))
+(:init
+	(AtStart r1)
+	(AtStart r2))
+
+)

@@ -1,0 +1,19 @@
+2023-04-16 17:54:43 - WARNING  - __main__ - latest
+ANTLR runtime and generated code versions disagree: 4.7!=4.8
+ANTLR runtime and generated code versions disagree: 4.7!=4.8
+ANTLR runtime and generated code versions disagree: 4.7!=4.8
+ANTLR runtime and generated code versions disagree: 4.7!=4.8
+2023-04-16 17:54:43 - WARNING  - __main__ - parsing duration: 0.062
+improved heuristic
+action_reward {'0': -95.64300000000001, '1': -82.40500000000033, '2': 21168.840999999553}
+sorted_action_reward [('2', 21168.840999999553), ('1', -82.40500000000033), ('0', -95.64300000000001)]
+2023-04-16 17:54:43 - WARNING  - __main__ - grounding duration: 0.000
+2023-04-16 17:54:43 - WARNING  - __main__ - solving duration: 0.000
+==>
+1 (act2 r1 r2)
+root 3
+3 (task3 r1 r2) -> m5-task3 4
+4 (task2 r1 r2) -> m2-task2 1
+<==
+
+[0m

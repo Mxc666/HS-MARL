@@ -1,0 +1,17 @@
+(define (problem problem1) (:domain GoTogether)
+(:objects
+	r1 - robot
+	r2 - robot
+)
+
+(:htn
+  :tasks (and
+   (ArriveGoal r1 r2)
+   )
+  :ordering ( )
+  :constraints ( ))
+(:init
+	(AtStart r1)
+	(AtStart r2))
+
+)

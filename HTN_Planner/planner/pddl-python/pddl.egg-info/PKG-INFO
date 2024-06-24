@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: pddl
+Version: 1.0
+Summary: PDDL Parser library
+Author: Charles Lesire
+Author-email: charles.lesire@onera.fr

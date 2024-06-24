@@ -1,0 +1,1 @@
+python -m hipop --plan hadd-max --ol sorted --hadd hadd-reuse --domain ~/code/HTN_Planner/domains/GoTogether_HS-MARL/domain.hddl --problem ~/code/HTN_Planner/domains/GoTogether_HS-MARL/problem.hddl --actions_reward ~/code/HTN_Planner/intrinsic_reward/GoTogether_HS-MARL/action_reward_100.npy --methods_reward NONE 2>&1 | tee ~/code/GoTogether_HS-MARL/out/GoTogether_HS-MARL_100.out

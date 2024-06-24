@@ -1,0 +1,89 @@
+(define (domain rover_domain)
+	(:requirements :typing :hierachie)
+	(:types
+		waypoint - object
+		rover - object
+	)
+	(:predicates
+		(at ?arg0 - rover ?arg1 - waypoint)
+		(can_traverse ?arg0 - rover ?arg1 - waypoint ?arg2 - waypoint)
+		(visible ?arg0 - waypoint ?arg1 - waypoint)
+		(available ?arg0 - rover)
+		(visited ?arg0 - waypoint)
+	)
+
+	(:task navigate_abs
+		:parameters (?rover - rover ?to - waypoint)
+		:precondition ()
+		:effect ()
+	)
+
+	(:method m_navigate_abs_1_ordering_0
+		:parameters (?from - waypoint ?rover - rover ?to - waypoint)
+		:task (navigate_abs ?rover ?to)
+		:precondition (and
+			(at ?rover ?from)
+		)
+		:subtasks (and
+		 (task0 (visit ?from))
+		 (task1 (navigate ?rover ?from ?to))
+		 (task2 (unvisit ?from))
+		)
+		:ordering (and
+			(task0 < task1)
+			(task1 < task2)
+		)
+	)
+
+	  (:method m-navigate_abs-1
+	    :parameters (?rover - rover ?from ?to - waypoint)
+	    :task (navigate_abs ?rover ?to)
+	    :precondition (at ?rover ?from)
+	    :ordered-subtasks (and
+	        (visit ?from)
+	        (navigate ?rover ?from ?to)
+	        (unvisit ?from)
+	      )
+	  )
+
+		  (:method m-navigate_abs-2
+		    :parameters (?rover - rover ?to - waypoint)
+		    :task (navigate_abs ?rover ?to)
+		    :precondition (at ?rover ?to)
+		    :ordered-subtasks ( )
+		  )
+
+	(:action navigate
+		:parameters (?x - rover ?y - waypoint ?z - waypoint)
+		:precondition
+			(and
+				(can_traverse ?x ?y ?z)
+				(available ?x)
+				(at ?x ?y)
+				(visible ?y ?z)
+			)
+		:effect
+			(and
+				(not (at ?x ?y))
+				(at ?x ?z)
+			)
+	)
+
+	(:action visit
+		:parameters (?waypoint - waypoint)
+		:precondition ()
+		:effect
+			(and
+				(visited ?waypoint)
+			)
+	)
+
+	(:action unvisit
+		:parameters (?waypoint - waypoint)
+		:precondition ()
+		:effect
+			(and
+				(not (visited ?waypoint))
+			)
+	)
+)
